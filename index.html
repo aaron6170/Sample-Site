@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RISE — Helping people rise</title>
+    <meta name="description" content="RISE is a nonprofit supporting our community through programs, resources, and connection." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="nav" aria-label="Primary navigation">
+          <a class="brand" href="index.html">
+            <span class="logo" aria-hidden="true">
+              <img src="assets/logo.png" alt="" onerror="this.remove(); this.parentElement.textContent='R';" />
+            </span>
+            <span>RISE</span>
+          </a>
+
+          <button class="btn menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="navlinks">
+            Menu
+          </button>
+
+          <nav id="navlinks" class="navlinks" data-navlinks data-open="false">
+            <a data-nav href="index.html">Home</a>
+            <a data-nav href="about.html">About</a>
+            <a data-nav href="programs.html">Programs</a>
+            <a data-nav href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <section class="hero" aria-label="RISE introduction">
+          <div>
+            <span class="pill"><span class="dot" aria-hidden="true"></span> A nonprofit rooted in community</span>
+            <h1>Helping people rise—one steady step at a time.</h1>
+            <p>
+              RISE connects people to support, skills, and a welcoming community. We run practical programs and partner with
+              local organizations to make help easier to find—and easier to accept.
+            </p>
+            <div class="cta">
+              <a class="btn primary" href="programs.html">Explore programs</a>
+              <a class="btn" href="contact.html">Get involved</a>
+            </div>
+            <p class="field-help" style="margin-top: 12px">
+              Tip: once you add a hero image at <code>assets/hero.jpg</code>, the right panel will automatically use it.
+            </p>
+          </div>
+
+          <aside class="hero-card" aria-label="Impact highlight"></aside>
+        </section>
+
+        <section class="grid section" aria-label="What we do">
+          <article class="card">
+            <div class="icon" aria-hidden="true">🤝</div>
+            <h3>Direct support</h3>
+            <p>Warm, human help with clear next steps—no jargon, no runaround.</p>
+          </article>
+          <article class="card">
+            <div class="icon teal" aria-hidden="true">🧭</div>
+            <h3>Navigation</h3>
+            <p>We guide people through resources, referrals, and follow-ups.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🌱</div>
+            <h3>Skill-building</h3>
+            <p>Programs that build confidence, stability, and practical skills.</p>
+          </article>
+        </section>
+
+        <section class="section split" aria-label="How it works">
+          <div class="card">
+            <h2>How RISE works</h2>
+            <p class="lede">A simple approach designed to feel safe, respectful, and effective.</p>
+            <ul class="list">
+              <li>Start with a conversation (phone, email, or in person).</li>
+              <li>We map out what you need and what’s realistic right now.</li>
+              <li>We connect you to resources and keep checking in.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h2>Ways to support</h2>
+            <p class="lede">Volunteer, partner, or donate—every contribution matters.</p>
+            <div class="cta">
+              <a class="btn primary" href="contact.html">Volunteer</a>
+              <a class="btn" href="contact.html#partner">Partner</a>
+            </div>
+            <p class="field-help" style="margin-top: 12px">
+              Want a donate button? Tell me your donation platform (PayPal, Stripe, Givebutter, etc.) and I’ll wire it up.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>RISE</strong>
+          <p class="fineprint">
+            Replace this line with your mission statement, city/state, and nonprofit registration info (if applicable).
+          </p>
+        </div>
+        <div class="fineprint">
+          <div><a href="contact.html">Contact</a></div>
+          <div><a href="about.html">About</a></div>
+          <div><a href="programs.html">Programs</a></div>
+          <div style="margin-top: 10px">© <span data-year></span> RISE</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll('[data-year]').forEach((n) => (n.textContent = new Date().getFullYear()));
+    </script>
+    <script src="js/site.js"></script>
+    <script>
+      const img = new Image();
+      img.onload = () => document.documentElement.style.setProperty('--hero-image', "url('assets/hero.jpg')");
+      img.src = 'assets/hero.jpg';
+
+      const hero = document.querySelector('.hero-card');
+      if (hero) {
+        hero.innerHTML = `
+          <div class="stat">
+            <strong>Impact highlight</strong>
+            <span>Swap this with a real metric (e.g., “120 families supported in 2025”).</span>
+          </div>
+        `;
+      }
+    </script>
+  </body>
+</html>
+

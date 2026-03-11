@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Programs — RISE</title>
+    <meta name="description" content="Explore RISE programs and how to participate or refer someone." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="nav" aria-label="Primary navigation">
+          <a class="brand" href="index.html">
+            <span class="logo" aria-hidden="true">
+              <img src="assets/logo.png" alt="" onerror="this.remove(); this.parentElement.textContent='R';" />
+            </span>
+            <span>RISE</span>
+          </a>
+
+          <button class="btn menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="navlinks">
+            Menu
+          </button>
+
+          <nav id="navlinks" class="navlinks" data-navlinks data-open="false">
+            <a data-nav href="index.html">Home</a>
+            <a data-nav href="about.html">About</a>
+            <a data-nav href="programs.html">Programs</a>
+            <a data-nav href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <section class="section">
+          <span class="pill"><span class="dot" aria-hidden="true"></span> Programs</span>
+          <h1 style="margin: 12px 0 10px; font-size: clamp(28px, 3.2vw, 40px)">Support that’s practical and personal.</h1>
+          <p class="lede">
+            Replace the cards below with your real programs (eligibility, schedule, how to enroll, and where you operate).
+          </p>
+        </section>
+
+        <section class="grid section" aria-label="Program list">
+          <article class="card">
+            <div class="icon" aria-hidden="true">🧰</div>
+            <h3>Program A</h3>
+            <p>Short description of the program and who it’s for.</p>
+            <p class="field-help" style="margin: 10px 0 0">Frequency • Location • Eligibility</p>
+          </article>
+          <article class="card">
+            <div class="icon teal" aria-hidden="true">📚</div>
+            <h3>Program B</h3>
+            <p>Short description of the program and what participants can expect.</p>
+            <p class="field-help" style="margin: 10px 0 0">Frequency • Location • Eligibility</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">🫶</div>
+            <h3>Program C</h3>
+            <p>Short description with a simple call to action.</p>
+            <p class="field-help" style="margin: 10px 0 0">Frequency • Location • Eligibility</p>
+          </article>
+        </section>
+
+        <section class="split section" aria-label="Referrals and participation">
+          <article class="card">
+            <h2>Want to join?</h2>
+            <p class="lede">We’ll help you figure out the best next step.</p>
+            <ul class="list">
+              <li>Tell us what you’re looking for.</li>
+              <li>We’ll confirm fit and availability.</li>
+              <li>If we’re not the right match, we’ll suggest alternatives.</li>
+            </ul>
+            <div class="cta" style="margin-top: 12px">
+              <a class="btn primary" href="contact.html">Contact RISE</a>
+            </div>
+          </article>
+          <article class="card">
+            <h2>Make a referral</h2>
+            <p class="lede">For partners, schools, and community organizations.</p>
+            <ul class="list">
+              <li>Referral criteria (bullet list)</li>
+              <li>What information to include</li>
+              <li>Expected response time</li>
+            </ul>
+            <div class="cta" style="margin-top: 12px">
+              <a class="btn" href="contact.html#partner">Partner / referral contact</a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>RISE</strong>
+          <p class="fineprint">Add your mission statement + location here.</p>
+        </div>
+        <div class="fineprint">
+          <div><a href="contact.html">Contact</a></div>
+          <div><a href="about.html">About</a></div>
+          <div><a href="programs.html">Programs</a></div>
+          <div style="margin-top: 10px">© <span data-year></span> RISE</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll('[data-year]').forEach((n) => (n.textContent = new Date().getFullYear()));
+    </script>
+    <script src="js/site.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About — RISE</title>
+    <meta name="description" content="Learn about RISE’s mission, values, and the people behind the work." />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container">
+        <div class="nav" aria-label="Primary navigation">
+          <a class="brand" href="index.html">
+            <span class="logo" aria-hidden="true">
+              <img src="assets/logo.png" alt="" onerror="this.remove(); this.parentElement.textContent='R';" />
+            </span>
+            <span>RISE</span>
+          </a>
+
+          <button class="btn menu-btn" type="button" data-menu-btn aria-expanded="false" aria-controls="navlinks">
+            Menu
+          </button>
+
+          <nav id="navlinks" class="navlinks" data-navlinks data-open="false">
+            <a data-nav href="index.html">Home</a>
+            <a data-nav href="about.html">About</a>
+            <a data-nav href="programs.html">Programs</a>
+            <a data-nav href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="container">
+        <section class="section">
+          <span class="pill"><span class="dot" aria-hidden="true"></span> About RISE</span>
+          <h1 style="margin: 12px 0 10px; font-size: clamp(28px, 3.2vw, 40px)">A warm, practical kind of help.</h1>
+          <p class="lede">
+            This page is ready for your real story. Replace the sections below with your mission, history, and approach.
+          </p>
+        </section>
+
+        <section class="split section" aria-label="Mission and values">
+          <article class="card">
+            <h2>Our mission</h2>
+            <p class="lede">What you do, for whom, and why it matters—one clear sentence.</p>
+            <p style="margin: 0; color: var(--muted)">
+              Example: RISE helps individuals and families build stability through direct support, skill-building programs,
+              and connections to trusted local resources.
+            </p>
+          </article>
+          <article class="card">
+            <h2>Our values</h2>
+            <ul class="list">
+              <li><strong>Respect</strong>: we meet people where they are.</li>
+              <li><strong>Clarity</strong>: we keep steps simple and transparent.</li>
+              <li><strong>Consistency</strong>: we follow through.</li>
+              <li><strong>Community</strong>: we partner and listen.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="section grid" aria-label="Team">
+          <article class="card">
+            <div class="icon teal" aria-hidden="true">👤</div>
+            <h3>Executive Director</h3>
+            <p>Short bio + link to email.</p>
+          </article>
+          <article class="card">
+            <div class="icon" aria-hidden="true">👤</div>
+            <h3>Programs Lead</h3>
+            <p>Short bio + focus area.</p>
+          </article>
+          <article class="card">
+            <div class="icon teal" aria-hidden="true">👤</div>
+            <h3>Board / Advisors</h3>
+            <p>List a few names, or summarize governance.</p>
+          </article>
+        </section>
+
+        <section class="section split" aria-label="Transparency">
+          <article class="card">
+            <h2>Transparency</h2>
+            <p class="lede">Share what builds trust: outcomes, partners, and how to get updates.</p>
+            <ul class="list">
+              <li>Annual impact summary (PDF link)</li>
+              <li>Financials / IRS letter (link)</li>
+              <li>Partner organizations (list)</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h2>Press & partnerships</h2>
+            <p class="lede">Make it easy for people to reach you.</p>
+            <div class="cta">
+              <a class="btn primary" href="contact.html#partner">Partner with RISE</a>
+              <a class="btn" href="contact.html">Media contact</a>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>RISE</strong>
+          <p class="fineprint">Add your mission statement + location here.</p>
+        </div>
+        <div class="fineprint">
+          <div><a href="contact.html">Contact</a></div>
+          <div><a href="about.html">About</a></div>
+          <div><a href="programs.html">Programs</a></div>
+          <div style="margin-top: 10px">© <span data-year></span> RISE</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.querySelectorAll('[data-year]').forEach((n) => (n.textContent = new Date().getFullYear()));
+    </script>
+    <script src="js/site.js"></script>
+  </body>
+</html>
+
