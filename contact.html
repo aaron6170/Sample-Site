@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4YXWY0L03F"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-4YXWY0L03F');
+  </script>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact &mdash; R1SE</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -72,7 +80,7 @@
           </div>
           <div style="display:flex;align-items:center;gap:1rem;">
             <div style="width:48px;height:48px;background:var(--lav-light);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;">&#9993;&#65039;</div>
-            <div><strong style="display:block;margin-bottom:0.15rem;">Email Us</strong><span style="color:var(--muted);font-size:0.9rem;">hello@rise-community.org</span></div>
+            <div><strong style="display:block;margin-bottom:0.15rem;">Email Us</strong><span style="color:var(--muted);font-size:0.9rem;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a626f6666654a7863796f27696567677f64637e732465786d">[email&#160;protected]</a></span></div>
           </div>
         </div>
         <div style="background:var(--lav-pale);border-radius:var(--radius);padding:1.5rem;">
@@ -139,7 +147,7 @@
   </footer>
   </div>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     const reveals = document.querySelectorAll('.reveal');
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -211,11 +219,3 @@
         html += `<div style="text-align:center;padding:1rem 0 0;border-top:1px solid #ece9f8;margin-top:0.5rem;"><p style="font-size:0.8rem;color:#7a6a90;">Need immediate help?</p><p style="font-weight:800;color:#8b3fbc;font-size:1rem;">SAMHSA: 1-800-662-4357</p></div>`;
         results.innerHTML = html;
       } catch(err) {
-        results.innerHTML = '<p style="text-align:center;color:#7a6a90;padding:1rem;">Something went wrong. Call SAMHSA at <strong>1-800-662-4357</strong>.</p>';
-      }
-      searchBtn.disabled = false;
-    });
-  </script>
-
-</body>
-</html>
