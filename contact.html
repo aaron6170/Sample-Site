@@ -82,24 +82,24 @@
         </div>
       </div>
 
-      <div class="reveal" style="display:flex;flex-direction:column;gap:1.25rem;">
+      <form action="https://formspree.io/f/mzdjenvv" method="POST" class="reveal" style="display:flex;flex-direction:column;gap:1.25rem;">
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
           <div style="display:flex;flex-direction:column;gap:0.45rem;">
             <label style="font-size:0.82rem;font-weight:700;">First Name</label>
-            <input type="text" placeholder="Your first name" style="background:var(--lav-pale);border:1.5px solid rgba(200,192,232,0.5);border-radius:12px;padding:0.8rem 1rem;font-family:var(--sans);font-size:0.95rem;color:var(--ink);outline:none;width:100%;transition:border-color 0.2s,box-shadow 0.2s;">
+            <input type="text" name="first_name" placeholder="Your first name" style="background:var(--lav-pale);border:1.5px solid rgba(200,192,232,0.5);border-radius:12px;padding:0.8rem 1rem;font-family:var(--sans);font-size:0.95rem;color:var(--ink);outline:none;width:100%;transition:border-color 0.2s,box-shadow 0.2s;">
           </div>
           <div style="display:flex;flex-direction:column;gap:0.45rem;">
             <label style="font-size:0.82rem;font-weight:700;">Last Name</label>
-            <input type="text" placeholder="Your last name" style="background:var(--lav-pale);border:1.5px solid rgba(200,192,232,0.5);border-radius:12px;padding:0.8rem 1rem;font-family:var(--sans);font-size:0.95rem;color:var(--ink);outline:none;width:100%;transition:border-color 0.2s,box-shadow 0.2s;">
+            <input type="text" name="last_name" placeholder="Your last name" style="background:var(--lav-pale);border:1.5px solid rgba(200,192,232,0.5);border-radius:12px;padding:0.8rem 1rem;font-family:var(--sans);font-size:0.95rem;color:var(--ink);outline:none;width:100%;transition:border-color 0.2s,box-shadow 0.2s;">
           </div>
         </div>
         <div style="display:flex;flex-direction:column;gap:0.45rem;">
           <label style="font-size:0.82rem;font-weight:700;">Email Address</label>
-          <input type="email" placeholder="your@email.com" style="background:var(--lav-pale);border:1.5px solid rgba(200,192,232,0.5);border-radius:12px;padding:0.8rem 1rem;font-family:var(--sans);font-size:0.95rem;color:var(--ink);outline:none;width:100%;transition:border-color 0.2s,box-shadow 0.2s;">
+          <input type="email" name="email" placeholder="your@email.com" style="background:var(--lav-pale);border:1.5px solid rgba(200,192,232,0.5);border-radius:12px;padding:0.8rem 1rem;font-family:var(--sans);font-size:0.95rem;color:var(--ink);outline:none;width:100%;transition:border-color 0.2s,box-shadow 0.2s;">
         </div>
         <div style="display:flex;flex-direction:column;gap:0.45rem;">
           <label style="font-size:0.82rem;font-weight:700;">How can we help?</label>
-          <select style="background:var(--lav-pale);border:1.5px solid rgba(200,192,232,0.5);border-radius:12px;padding:0.8rem 1rem;font-family:var(--sans);font-size:0.95rem;color:var(--ink);outline:none;width:100%;transition:border-color 0.2s,box-shadow 0.2s;">
+          <select name="reason" style="background:var(--lav-pale);border:1.5px solid rgba(200,192,232,0.5);border-radius:12px;padding:0.8rem 1rem;font-family:var(--sans);font-size:0.95rem;color:var(--ink);outline:none;width:100%;transition:border-color 0.2s,box-shadow 0.2s;">
             <option value="">Select a reason...</option>
             <option>I need support for myself</option>
             <option>I&rsquo;m concerned about a family member</option>
@@ -113,11 +113,11 @@
         </div>
         <div style="display:flex;flex-direction:column;gap:0.45rem;">
           <label style="font-size:0.82rem;font-weight:700;">Message</label>
-          <textarea placeholder="Share what&rsquo;s on your mind &mdash; no judgment here..." style="background:var(--lav-pale);border:1.5px solid rgba(200,192,232,0.5);border-radius:12px;padding:0.8rem 1rem;font-family:var(--sans);font-size:0.95rem;color:var(--ink);outline:none;width:100%;resize:vertical;min-height:120px;transition:border-color 0.2s,box-shadow 0.2s;"></textarea>
+          <textarea name="message" placeholder="Share what&rsquo;s on your mind &mdash; no judgment here..." style="background:var(--lav-pale);border:1.5px solid rgba(200,192,232,0.5);border-radius:12px;padding:0.8rem 1rem;font-family:var(--sans);font-size:0.95rem;color:var(--ink);outline:none;width:100%;resize:vertical;min-height:120px;transition:border-color 0.2s,box-shadow 0.2s;"></textarea>
         </div>
-        <button id="submitBtn" style="display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,var(--purple),var(--pink));color:white;font-weight:700;font-size:1rem;padding:0.9rem 2rem;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 24px rgba(139,63,188,0.35);width:fit-content;transition:transform 0.2s;">Send Message &#128156;</button>
+        <button type="submit" style="display:inline-flex;align-items:center;gap:0.5rem;background:linear-gradient(135deg,var(--purple),var(--pink));color:white;font-weight:700;font-size:1rem;padding:0.9rem 2rem;border-radius:50px;border:none;cursor:pointer;box-shadow:0 6px 24px rgba(139,63,188,0.35);width:fit-content;transition:transform 0.2s;">Send Message &#128156;</button>
         <p style="font-size:0.78rem;color:var(--muted);">All information is kept strictly confidential.</p>
-      </div>
+      </form>
 
     </div>
 
