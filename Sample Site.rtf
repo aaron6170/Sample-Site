@@ -1,0 +1,855 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="en">\
+<head>\
+  <meta charset="UTF-8" />\
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>\
+  <title>Alex Mercer \'97 Designer & Developer</title>\
+  <link rel="preconnect" href="https://fonts.googleapis.com">\
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">\
+  <style>\
+    *, *::before, *::after \{ box-sizing: border-box; margin: 0; padding: 0; \}\
+\
+    :root \{\
+      --ink: #0f0d0a;\
+      --paper: #f5f0e8;\
+      --cream: #ede8db;\
+      --rust: #c0472b;\
+      --rust-dark: #8f2f1a;\
+      --muted: #8a8070;\
+      --border: rgba(15,13,10,0.12);\
+      --serif: 'Cormorant Garamond', Georgia, serif;\
+      --mono: 'DM Mono', monospace;\
+    \}\
+\
+    html \{ scroll-behavior: smooth; \}\
+\
+    body \{\
+      background: var(--paper);\
+      color: var(--ink);\
+      font-family: var(--serif);\
+      font-size: 18px;\
+      line-height: 1.6;\
+      overflow-x: hidden;\
+      cursor: none;\
+    \}\
+\
+    /* Custom Cursor */\
+    .cursor \{\
+      width: 10px; height: 10px;\
+      background: var(--rust);\
+      border-radius: 50%;\
+      position: fixed;\
+      pointer-events: none;\
+      z-index: 9999;\
+      transition: transform 0.15s ease, opacity 0.2s;\
+      transform: translate(-50%, -50%);\
+    \}\
+    .cursor-ring \{\
+      width: 36px; height: 36px;\
+      border: 1px solid var(--rust);\
+      border-radius: 50%;\
+      position: fixed;\
+      pointer-events: none;\
+      z-index: 9998;\
+      transform: translate(-50%, -50%);\
+      transition: width 0.3s ease, height 0.3s ease, border-color 0.3s;\
+    \}\
+    body:has(a:hover) .cursor-ring,\
+    body:has(button:hover) .cursor-ring \{\
+      width: 56px; height: 56px;\
+      border-color: var(--ink);\
+    \}\
+\
+    /* NAV */\
+    nav \{\
+      position: fixed; top: 0; left: 0; right: 0;\
+      z-index: 100;\
+      display: flex; align-items: center; justify-content: space-between;\
+      padding: 1.5rem 3rem;\
+      mix-blend-mode: multiply;\
+    \}\
+    .nav-logo \{\
+      font-family: var(--mono);\
+      font-size: 0.7rem;\
+      letter-spacing: 0.25em;\
+      text-transform: uppercase;\
+      color: var(--ink);\
+      text-decoration: none;\
+      opacity: 0.6;\
+    \}\
+    .nav-links \{\
+      display: flex; gap: 2.5rem; list-style: none;\
+    \}\
+    .nav-links a \{\
+      font-family: var(--mono);\
+      font-size: 0.65rem;\
+      letter-spacing: 0.2em;\
+      text-transform: uppercase;\
+      color: var(--ink);\
+      text-decoration: none;\
+      opacity: 0.5;\
+      transition: opacity 0.2s;\
+    \}\
+    .nav-links a:hover \{ opacity: 1; \}\
+\
+    /* HERO */\
+    #hero \{\
+      min-height: 100vh;\
+      display: grid;\
+      grid-template-columns: 1fr 1fr;\
+      position: relative;\
+      overflow: hidden;\
+    \}\
+    .hero-left \{\
+      display: flex;\
+      flex-direction: column;\
+      justify-content: flex-end;\
+      padding: 6rem 3rem 5rem 3rem;\
+      position: relative;\
+      z-index: 2;\
+    \}\
+    .hero-tag \{\
+      font-family: var(--mono);\
+      font-size: 0.65rem;\
+      letter-spacing: 0.3em;\
+      text-transform: uppercase;\
+      color: var(--rust);\
+      margin-bottom: 2rem;\
+      display: flex; align-items: center; gap: 1rem;\
+    \}\
+    .hero-tag::before \{\
+      content: '';\
+      display: inline-block;\
+      width: 2.5rem; height: 1px;\
+      background: var(--rust);\
+    \}\
+    h1.hero-name \{\
+      font-family: var(--serif);\
+      font-size: clamp(4rem, 8vw, 7.5rem);\
+      font-weight: 300;\
+      line-height: 0.9;\
+      letter-spacing: -0.02em;\
+      margin-bottom: 0.1em;\
+    \}\
+    h1.hero-name em \{\
+      font-style: italic;\
+      color: var(--rust);\
+    \}\
+    .hero-title \{\
+      font-size: 1rem;\
+      font-family: var(--mono);\
+      font-weight: 300;\
+      color: var(--muted);\
+      letter-spacing: 0.15em;\
+      text-transform: uppercase;\
+      margin-top: 2rem;\
+      margin-bottom: 3rem;\
+    \}\
+    .hero-cta \{\
+      display: inline-flex;\
+      align-items: center;\
+      gap: 1rem;\
+      font-family: var(--mono);\
+      font-size: 0.7rem;\
+      letter-spacing: 0.2em;\
+      text-transform: uppercase;\
+      color: var(--ink);\
+      text-decoration: none;\
+      border-bottom: 1px solid var(--ink);\
+      padding-bottom: 0.4rem;\
+      width: fit-content;\
+      transition: color 0.2s, border-color 0.2s;\
+    \}\
+    .hero-cta:hover \{ color: var(--rust); border-color: var(--rust); \}\
+    .hero-cta .arrow \{ transition: transform 0.3s; \}\
+    .hero-cta:hover .arrow \{ transform: translateX(6px); \}\
+\
+    .hero-right \{\
+      position: relative;\
+      overflow: hidden;\
+    \}\
+    .hero-image-bg \{\
+      position: absolute; inset: 0;\
+      background: var(--cream);\
+      display: flex; align-items: center; justify-content: center;\
+    \}\
+    .hero-abstract \{\
+      width: 70%; aspect-ratio: 1;\
+      position: relative;\
+    \}\
+    .circle-outline \{\
+      position: absolute; inset: 0;\
+      border-radius: 50%;\
+      border: 1px solid rgba(15,13,10,0.15);\
+      animation: slowRotate 20s linear infinite;\
+    \}\
+    .circle-outline:nth-child(2) \{\
+      inset: 10%;\
+      border-color: var(--rust);\
+      opacity: 0.3;\
+      animation-direction: reverse;\
+      animation-duration: 14s;\
+    \}\
+    .circle-fill \{\
+      position: absolute;\
+      top: 50%; left: 50%;\
+      transform: translate(-50%, -50%);\
+      width: 45%; aspect-ratio: 1;\
+      border-radius: 50%;\
+      background: var(--rust);\
+      opacity: 0.12;\
+    \}\
+    .hero-grid-line \{\
+      position: absolute;\
+      background: var(--border);\
+    \}\
+    .hero-grid-line.v \{ width: 1px; top: 0; bottom: 0; left: 50%; \}\
+    .hero-grid-line.h \{ height: 1px; left: 0; right: 0; top: 50%; \}\
+\
+    .hero-scroll-hint \{\
+      position: absolute;\
+      bottom: 2.5rem; left: 3rem;\
+      font-family: var(--mono);\
+      font-size: 0.6rem;\
+      letter-spacing: 0.25em;\
+      text-transform: uppercase;\
+      color: var(--muted);\
+      writing-mode: vertical-rl;\
+      display: flex; align-items: center; gap: 1rem;\
+    \}\
+    .hero-scroll-hint::after \{\
+      content: '';\
+      width: 1px; height: 4rem;\
+      background: var(--muted);\
+      animation: scrollPulse 2s ease-in-out infinite;\
+    \}\
+\
+    .hero-year \{\
+      position: absolute;\
+      bottom: 2.5rem; right: 3rem;\
+      font-family: var(--mono);\
+      font-size: 0.6rem;\
+      letter-spacing: 0.2em;\
+      color: var(--muted);\
+      opacity: 0.5;\
+    \}\
+\
+    /* DIVIDER */\
+    .section-divider \{\
+      width: 100%;\
+      height: 1px;\
+      background: var(--border);\
+      margin: 0;\
+    \}\
+\
+    /* ABOUT STRIP */\
+    .about-strip \{\
+      background: var(--ink);\
+      color: var(--paper);\
+      padding: 5rem 3rem;\
+      display: grid;\
+      grid-template-columns: 1fr 2fr;\
+      gap: 4rem;\
+      align-items: start;\
+    \}\
+    .about-label \{\
+      font-family: var(--mono);\
+      font-size: 0.65rem;\
+      letter-spacing: 0.3em;\
+      text-transform: uppercase;\
+      color: var(--rust);\
+      padding-top: 0.5rem;\
+    \}\
+    .about-text \{\
+      font-size: 1.5rem;\
+      font-weight: 300;\
+      line-height: 1.5;\
+      color: rgba(245,240,232,0.85);\
+    \}\
+    .about-text strong \{\
+      color: var(--paper);\
+      font-weight: 400;\
+    \}\
+\
+    /* PROJECTS */\
+    #projects \{\
+      padding: 6rem 3rem;\
+    \}\
+    .section-header \{\
+      display: flex;\
+      align-items: baseline;\
+      justify-content: space-between;\
+      margin-bottom: 4rem;\
+      padding-bottom: 1.5rem;\
+      border-bottom: 1px solid var(--border);\
+    \}\
+    .section-title \{\
+      font-size: clamp(2.5rem, 5vw, 4rem);\
+      font-weight: 300;\
+      line-height: 1;\
+      letter-spacing: -0.02em;\
+    \}\
+    .section-title em \{ font-style: italic; color: var(--rust); \}\
+    .section-count \{\
+      font-family: var(--mono);\
+      font-size: 0.65rem;\
+      letter-spacing: 0.2em;\
+      color: var(--muted);\
+    \}\
+\
+    .projects-grid \{\
+      display: grid;\
+      grid-template-columns: repeat(3, 1fr);\
+      gap: 0;\
+      border: 1px solid var(--border);\
+    \}\
+    .project-card \{\
+      padding: 2.5rem;\
+      border-right: 1px solid var(--border);\
+      border-bottom: 1px solid var(--border);\
+      position: relative;\
+      overflow: hidden;\
+      transition: background 0.3s;\
+      cursor: pointer;\
+    \}\
+    .project-card:nth-child(3n) \{ border-right: none; \}\
+    .project-card:nth-child(n+4) \{ border-bottom: none; \}\
+    .project-card::before \{\
+      content: '';\
+      position: absolute;\
+      top: 0; left: 0;\
+      width: 0; height: 3px;\
+      background: var(--rust);\
+      transition: width 0.4s ease;\
+    \}\
+    .project-card:hover::before \{ width: 100%; \}\
+    .project-card:hover \{ background: var(--cream); \}\
+\
+    .project-num \{\
+      font-family: var(--mono);\
+      font-size: 0.6rem;\
+      letter-spacing: 0.2em;\
+      color: var(--rust);\
+      margin-bottom: 1.5rem;\
+      opacity: 0.7;\
+    \}\
+    .project-title \{\
+      font-size: 1.4rem;\
+      font-weight: 400;\
+      margin-bottom: 0.75rem;\
+      line-height: 1.2;\
+    \}\
+    .project-desc \{\
+      font-size: 0.9rem;\
+      color: var(--muted);\
+      line-height: 1.6;\
+      margin-bottom: 2rem;\
+      font-family: var(--mono);\
+      font-weight: 300;\
+    \}\
+    .project-tags \{\
+      display: flex; gap: 0.5rem; flex-wrap: wrap;\
+    \}\
+    .tag \{\
+      font-family: var(--mono);\
+      font-size: 0.55rem;\
+      letter-spacing: 0.15em;\
+      text-transform: uppercase;\
+      padding: 0.3rem 0.7rem;\
+      border: 1px solid var(--border);\
+      color: var(--muted);\
+      transition: border-color 0.2s, color 0.2s;\
+    \}\
+    .project-card:hover .tag \{\
+      border-color: var(--rust);\
+      color: var(--rust);\
+    \}\
+    .project-link \{\
+      position: absolute;\
+      bottom: 2.5rem; right: 2.5rem;\
+      width: 2.5rem; height: 2.5rem;\
+      border: 1px solid var(--border);\
+      border-radius: 50%;\
+      display: flex; align-items: center; justify-content: center;\
+      font-size: 0.9rem;\
+      color: var(--muted);\
+      transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;\
+    \}\
+    .project-card:hover .project-link \{\
+      background: var(--rust);\
+      color: var(--paper);\
+      border-color: var(--rust);\
+      transform: rotate(45deg);\
+    \}\
+\
+    /* SKILLS BAND */\
+    .skills-band \{\
+      overflow: hidden;\
+      border-top: 1px solid var(--border);\
+      border-bottom: 1px solid var(--border);\
+      padding: 1.25rem 0;\
+      background: var(--cream);\
+    \}\
+    .skills-track \{\
+      display: flex;\
+      gap: 3rem;\
+      width: max-content;\
+      animation: marquee 25s linear infinite;\
+    \}\
+    .skills-track span \{\
+      font-family: var(--mono);\
+      font-size: 0.65rem;\
+      letter-spacing: 0.25em;\
+      text-transform: uppercase;\
+      color: var(--muted);\
+      white-space: nowrap;\
+    \}\
+    .skills-track span.dot \{\
+      color: var(--rust);\
+      font-size: 1rem;\
+      line-height: 1;\
+    \}\
+\
+    /* CONTACT */\
+    #contact \{\
+      padding: 6rem 3rem;\
+      display: grid;\
+      grid-template-columns: 1fr 1fr;\
+      gap: 6rem;\
+      align-items: start;\
+    \}\
+    .contact-left h2 \{\
+      font-size: clamp(2.5rem, 5vw, 4rem);\
+      font-weight: 300;\
+      line-height: 1;\
+      letter-spacing: -0.02em;\
+      margin-bottom: 1.5rem;\
+    \}\
+    .contact-left h2 em \{ font-style: italic; color: var(--rust); \}\
+    .contact-left p \{\
+      font-size: 1rem;\
+      color: var(--muted);\
+      font-family: var(--mono);\
+      font-weight: 300;\
+      line-height: 1.7;\
+      margin-bottom: 3rem;\
+    \}\
+    .contact-links \{\
+      display: flex; flex-direction: column; gap: 1rem;\
+    \}\
+    .contact-link \{\
+      display: flex;\
+      align-items: center;\
+      gap: 1rem;\
+      font-family: var(--mono);\
+      font-size: 0.7rem;\
+      letter-spacing: 0.15em;\
+      text-transform: uppercase;\
+      color: var(--ink);\
+      text-decoration: none;\
+      transition: color 0.2s;\
+    \}\
+    .contact-link:hover \{ color: var(--rust); \}\
+    .contact-link .cl-icon \{\
+      width: 2rem; height: 2rem;\
+      border: 1px solid var(--border);\
+      border-radius: 50%;\
+      display: flex; align-items: center; justify-content: center;\
+      font-size: 0.8rem;\
+      transition: background 0.2s, border-color 0.2s;\
+    \}\
+    .contact-link:hover .cl-icon \{\
+      background: var(--rust);\
+      border-color: var(--rust);\
+      color: var(--paper);\
+    \}\
+\
+    .contact-form \{\
+      display: flex; flex-direction: column; gap: 0;\
+    \}\
+    .form-row \{\
+      border-bottom: 1px solid var(--border);\
+      padding: 1.25rem 0;\
+      display: flex;\
+      flex-direction: column;\
+      gap: 0.5rem;\
+    \}\
+    .form-row label \{\
+      font-family: var(--mono);\
+      font-size: 0.6rem;\
+      letter-spacing: 0.25em;\
+      text-transform: uppercase;\
+      color: var(--rust);\
+    \}\
+    .form-row input,\
+    .form-row textarea \{\
+      background: transparent;\
+      border: none;\
+      outline: none;\
+      font-family: var(--serif);\
+      font-size: 1rem;\
+      color: var(--ink);\
+      width: 100%;\
+      resize: none;\
+    \}\
+    .form-row textarea \{ min-height: 80px; \}\
+    .form-row input::placeholder,\
+    .form-row textarea::placeholder \{\
+      color: var(--muted);\
+      opacity: 0.5;\
+    \}\
+\
+    .submit-btn \{\
+      margin-top: 2.5rem;\
+      display: inline-flex;\
+      align-items: center;\
+      gap: 1rem;\
+      background: var(--ink);\
+      color: var(--paper);\
+      border: none;\
+      padding: 1.1rem 2.5rem;\
+      font-family: var(--mono);\
+      font-size: 0.65rem;\
+      letter-spacing: 0.25em;\
+      text-transform: uppercase;\
+      cursor: pointer;\
+      transition: background 0.25s;\
+      width: fit-content;\
+    \}\
+    .submit-btn:hover \{ background: var(--rust); \}\
+    .submit-btn .arrow \{ transition: transform 0.3s; \}\
+    .submit-btn:hover .arrow \{ transform: translateX(6px); \}\
+\
+    /* FOOTER */\
+    footer \{\
+      background: var(--ink);\
+      color: var(--paper);\
+      padding: 2.5rem 3rem;\
+      display: flex;\
+      align-items: center;\
+      justify-content: space-between;\
+    \}\
+    footer .f-name \{\
+      font-size: 1.2rem;\
+      font-weight: 300;\
+      font-style: italic;\
+      opacity: 0.5;\
+    \}\
+    footer .f-copy \{\
+      font-family: var(--mono);\
+      font-size: 0.6rem;\
+      letter-spacing: 0.2em;\
+      opacity: 0.3;\
+    \}\
+\
+    /* ANIMATIONS */\
+    @keyframes slowRotate \{ to \{ transform: rotate(360deg); \} \}\
+    @keyframes scrollPulse \{\
+      0%, 100% \{ opacity: 0.3; transform: scaleY(0.8); \}\
+      50% \{ opacity: 1; transform: scaleY(1); \}\
+    \}\
+    @keyframes marquee \{ to \{ transform: translateX(-50%); \} \}\
+\
+    /* FADE IN */\
+    .fade-in \{\
+      opacity: 0;\
+      transform: translateY(24px);\
+      transition: opacity 0.8s ease, transform 0.8s ease;\
+    \}\
+    .fade-in.visible \{\
+      opacity: 1;\
+      transform: none;\
+    \}\
+    .fade-in:nth-child(2) \{ transition-delay: 0.1s; \}\
+    .fade-in:nth-child(3) \{ transition-delay: 0.2s; \}\
+    .fade-in:nth-child(4) \{ transition-delay: 0.3s; \}\
+    .fade-in:nth-child(5) \{ transition-delay: 0.4s; \}\
+    .fade-in:nth-child(6) \{ transition-delay: 0.5s; \}\
+\
+    /* HERO ENTRANCE */\
+    .hero-left > * \{\
+      opacity: 0;\
+      transform: translateY(30px);\
+      animation: heroIn 0.9s ease forwards;\
+    \}\
+    .hero-left > *:nth-child(1) \{ animation-delay: 0.2s; \}\
+    .hero-left > *:nth-child(2) \{ animation-delay: 0.4s; \}\
+    .hero-left > *:nth-child(3) \{ animation-delay: 0.55s; \}\
+    .hero-left > *:nth-child(4) \{ animation-delay: 0.7s; \}\
+    @keyframes heroIn \{\
+      to \{ opacity: 1; transform: none; \}\
+    \}\
+\
+    /* RESPONSIVE */\
+    @media (max-width: 900px) \{\
+      nav \{ padding: 1.2rem 1.5rem; \}\
+      #hero \{ grid-template-columns: 1fr; min-height: auto; \}\
+      .hero-left \{ padding: 8rem 1.5rem 4rem; \}\
+      .hero-right \{ height: 50vw; \}\
+      .about-strip \{ grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.5rem; \}\
+      #projects \{ padding: 4rem 1.5rem; \}\
+      .projects-grid \{ grid-template-columns: 1fr; \}\
+      .project-card \{ border-right: none; border-bottom: 1px solid var(--border); \}\
+      .project-card:last-child \{ border-bottom: none; \}\
+      #contact \{ grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; \}\
+      footer \{ flex-direction: column; gap: 1rem; padding: 2rem 1.5rem; \}\
+    \}\
+  </style>\
+</head>\
+<body>\
+\
+  <div class="cursor" id="cursor"></div>\
+  <div class="cursor-ring" id="cursorRing"></div>\
+\
+  <!-- NAV -->\
+  <nav>\
+    <a href="#hero" class="nav-logo">Alex Mercer</a>\
+    <ul class="nav-links">\
+      <li><a href="#projects">Work</a></li>\
+      <li><a href="#contact">Contact</a></li>\
+      <li><a href="#">R\'e9sum\'e9</a></li>\
+    </ul>\
+  </nav>\
+\
+  <!-- HERO -->\
+  <section id="hero">\
+    <div class="hero-left">\
+      <div class="hero-tag">Available for work \'b7 2026</div>\
+      <h1 class="hero-name">\
+        Alex<br><em>Mercer</em>\
+      </h1>\
+      <div class="hero-title">Designer &amp; Developer</div>\
+      <a href="#projects" class="hero-cta">\
+        View selected work <span class="arrow">\uc0\u8594 </span>\
+      </a>\
+    </div>\
+\
+    <div class="hero-right">\
+      <div class="hero-image-bg">\
+        <div class="hero-abstract">\
+          <div class="circle-outline"></div>\
+          <div class="circle-outline"></div>\
+          <div class="circle-fill"></div>\
+          <div class="hero-grid-line v"></div>\
+          <div class="hero-grid-line h"></div>\
+        </div>\
+      </div>\
+    </div>\
+\
+    <div class="hero-scroll-hint">Scroll</div>\
+    <div class="hero-year">\'a9&nbsp;2026</div>\
+  </section>\
+\
+  <!-- ABOUT STRIP -->\
+  <div class="about-strip">\
+    <div class="about-label">About</div>\
+    <p class="about-text">\
+      I craft <strong>digital experiences</strong> that sit at the intersection of\
+      aesthetic precision and functional clarity. With <strong>8+ years</strong> across\
+      product design, front-end engineering, and creative direction \'97 I turn\
+      complex problems into <strong>work that endures</strong>.\
+    </p>\
+  </div>\
+\
+  <!-- SKILLS BAND -->\
+  <div class="skills-band">\
+    <div class="skills-track">\
+      <span>React</span><span class="dot">\'b7</span>\
+      <span>TypeScript</span><span class="dot">\'b7</span>\
+      <span>Figma</span><span class="dot">\'b7</span>\
+      <span>Node.js</span><span class="dot">\'b7</span>\
+      <span>CSS / Motion</span><span class="dot">\'b7</span>\
+      <span>Product Design</span><span class="dot">\'b7</span>\
+      <span>Design Systems</span><span class="dot">\'b7</span>\
+      <span>Next.js</span><span class="dot">\'b7</span>\
+      <span>Brand Identity</span><span class="dot">\'b7</span>\
+      <span>React</span><span class="dot">\'b7</span>\
+      <span>TypeScript</span><span class="dot">\'b7</span>\
+      <span>Figma</span><span class="dot">\'b7</span>\
+      <span>Node.js</span><span class="dot">\'b7</span>\
+      <span>CSS / Motion</span><span class="dot">\'b7</span>\
+      <span>Product Design</span><span class="dot">\'b7</span>\
+      <span>Design Systems</span><span class="dot">\'b7</span>\
+      <span>Next.js</span><span class="dot">\'b7</span>\
+      <span>Brand Identity</span><span class="dot">\'b7</span>\
+    </div>\
+  </div>\
+\
+  <!-- PROJECTS -->\
+  <section id="projects">\
+    <div class="section-header fade-in">\
+      <h2 class="section-title">Selected <em>Work</em></h2>\
+      <span class="section-count">06 Projects</span>\
+    </div>\
+\
+    <div class="projects-grid">\
+      <div class="project-card fade-in">\
+        <div class="project-num">01 \'97 2025</div>\
+        <h3 class="project-title">Luminara Design System</h3>\
+        <p class="project-desc">A cohesive token-based design language serving 40+ product teams across a global SaaS platform.</p>\
+        <div class="project-tags">\
+          <span class="tag">Design Systems</span>\
+          <span class="tag">Figma</span>\
+          <span class="tag">React</span>\
+        </div>\
+        <a href="#" class="project-link">\uc0\u8599 </a>\
+      </div>\
+\
+      <div class="project-card fade-in">\
+        <div class="project-num">02 \'97 2025</div>\
+        <h3 class="project-title">Volta EV Dashboard</h3>\
+        <p class="project-desc">Real-time fleet analytics interface with predictive maintenance signals and route optimization.</p>\
+        <div class="project-tags">\
+          <span class="tag">UI/UX</span>\
+          <span class="tag">Data Viz</span>\
+          <span class="tag">D3.js</span>\
+        </div>\
+        <a href="#" class="project-link">\uc0\u8599 </a>\
+      </div>\
+\
+      <div class="project-card fade-in">\
+        <div class="project-num">03 \'97 2024</div>\
+        <h3 class="project-title">Folio \'97 Portfolio OS</h3>\
+        <p class="project-desc">An opinionated framework letting creatives publish portfolios with zero-config editorial layouts.</p>\
+        <div class="project-tags">\
+          <span class="tag">Next.js</span>\
+          <span class="tag">Open Source</span>\
+          <span class="tag">TypeScript</span>\
+        </div>\
+        <a href="#" class="project-link">\uc0\u8599 </a>\
+      </div>\
+\
+      <div class="project-card fade-in">\
+        <div class="project-num">04 \'97 2024</div>\
+        <h3 class="project-title">Noire Branding</h3>\
+        <p class="project-desc">Complete brand identity for an independent luxury fragrance house: wordmark, packaging, web.</p>\
+        <div class="project-tags">\
+          <span class="tag">Branding</span>\
+          <span class="tag">Print</span>\
+          <span class="tag">Motion</span>\
+        </div>\
+        <a href="#" class="project-link">\uc0\u8599 </a>\
+      </div>\
+\
+      <div class="project-card fade-in">\
+        <div class="project-num">05 \'97 2023</div>\
+        <h3 class="project-title">Pulse Health App</h3>\
+        <p class="project-desc">iOS health companion translating complex biomarkers into clear, anxiety-reducing visual summaries.</p>\
+        <div class="project-tags">\
+          <span class="tag">Mobile</span>\
+          <span class="tag">HealthKit</span>\
+          <span class="tag">SwiftUI</span>\
+        </div>\
+        <a href="#" class="project-link">\uc0\u8599 </a>\
+      </div>\
+\
+      <div class="project-card fade-in">\
+        <div class="project-num">06 \'97 2023</div>\
+        <h3 class="project-title">Meridian Maps</h3>\
+        <p class="project-desc">Custom cartographic storytelling tool for journalists visualizing geopolitical datasets at scale.</p>\
+        <div class="project-tags">\
+          <span class="tag">Mapbox</span>\
+          <span class="tag">Journalism</span>\
+          <span class="tag">WebGL</span>\
+        </div>\
+        <a href="#" class="project-link">\uc0\u8599 </a>\
+      </div>\
+    </div>\
+  </section>\
+\
+  <div class="section-divider"></div>\
+\
+  <!-- CONTACT -->\
+  <section id="contact">\
+    <div class="contact-left fade-in">\
+      <h2>Let's <em>talk</em></h2>\
+      <p>Open to select projects, collaborations,<br>and full-time opportunities.</p>\
+      <div class="contact-links">\
+        <a href="mailto:alex@example.com" class="contact-link">\
+          <span class="cl-icon">\uc0\u9993 </span> alex@example.com\
+        </a>\
+        <a href="#" class="contact-link">\
+          <span class="cl-icon">in</span> LinkedIn\
+        </a>\
+        <a href="#" class="contact-link">\
+          <span class="cl-icon">gh</span> GitHub\
+        </a>\
+        <a href="#" class="contact-link">\
+          <span class="cl-icon">tw</span> Twitter / X\
+        </a>\
+      </div>\
+    </div>\
+\
+    <div class="contact-form fade-in">\
+      <div class="form-row">\
+        <label>Your name</label>\
+        <input type="text" placeholder="Jane Smith">\
+      </div>\
+      <div class="form-row">\
+        <label>Email address</label>\
+        <input type="email" placeholder="jane@company.com">\
+      </div>\
+      <div class="form-row">\
+        <label>Subject</label>\
+        <input type="text" placeholder="Project brief, collab...">\
+      </div>\
+      <div class="form-row">\
+        <label>Message</label>\
+        <textarea placeholder="Tell me about your project\'85"></textarea>\
+      </div>\
+      <button class="submit-btn">\
+        Send message <span class="arrow">\uc0\u8594 </span>\
+      </button>\
+    </div>\
+  </section>\
+\
+  <!-- FOOTER -->\
+  <footer>\
+    <div class="f-name">Alex Mercer</div>\
+    <div class="f-copy">\'a9 2026 \'97 All rights reserved</div>\
+  </footer>\
+\
+  <script>\
+    // Custom cursor\
+    const cursor = document.getElementById('cursor');\
+    const ring = document.getElementById('cursorRing');\
+    let mx = 0, my = 0, rx = 0, ry = 0;\
+    document.addEventListener('mousemove', e => \{ mx = e.clientX; my = e.clientY; \});\
+    (function animCursor() \{\
+      rx += (mx - rx) * 0.12;\
+      ry += (my - ry) * 0.12;\
+      cursor.style.left = mx + 'px';\
+      cursor.style.top = my + 'px';\
+      ring.style.left = rx + 'px';\
+      ring.style.top = ry + 'px';\
+      requestAnimationFrame(animCursor);\
+    \})();\
+\
+    // Intersection observer for fade-ins\
+    const fades = document.querySelectorAll('.fade-in');\
+    const observer = new IntersectionObserver(entries => \{\
+      entries.forEach(e => \{ if (e.isIntersecting) \{ e.target.classList.add('visible'); \} \});\
+    \}, \{ threshold: 0.12 \});\
+    fades.forEach(el => observer.observe(el));\
+\
+    // Form submission\
+    document.querySelector('.submit-btn').addEventListener('click', () => \{\
+      const btn = document.querySelector('.submit-btn');\
+      btn.textContent = 'Message sent \uc0\u10003 ';\
+      btn.style.background = '#2d7a4f';\
+      btn.style.letterSpacing = '0.15em';\
+      setTimeout(() => \{\
+        btn.innerHTML = 'Send message <span class="arrow">\uc0\u8594 </span>';\
+        btn.style.background = '';\
+      \}, 3000);\
+    \});\
+  </script>\
+</body>\
+</html>}
